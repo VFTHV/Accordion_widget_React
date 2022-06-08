@@ -1,7 +1,7 @@
 import userEvent from "@testing-library/user-event";
 import React, { useEffect, useState, useRef } from "react";
 
-const Dropdown = ({ options, selected, onSelectedChange }) => {
+const Dropdown = ({ options, selected, onSelectedChange, label }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
 
@@ -41,7 +41,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
   return (
     <div ref={ref} className="ui form">
       <div className="field">
-        <label className="label">Select a Color</label>
+        <label className="label">{label}</label>
         <div
           className={`ui selection dropdown ${open ? "visible active" : ""}`}
           onClick={() => setOpen(!open)}

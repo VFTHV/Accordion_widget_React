@@ -1,5 +1,5 @@
-import userEvent from "@testing-library/user-event";
 import React, { useEffect, useState, useRef } from "react";
+import Colorsquare from "./Colorsquare";
 
 const Dropdown = ({ options, selected, onSelectedChange, label }) => {
   const [open, setOpen] = useState(false);
@@ -53,6 +53,7 @@ const Dropdown = ({ options, selected, onSelectedChange, label }) => {
           </div>
         </div>
       </div>
+      <Colorsquare color={selected.value} />
     </div>
   );
 };
